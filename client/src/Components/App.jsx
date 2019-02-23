@@ -14,7 +14,8 @@ class App extends React.Component {
   constructor (props){
     super (props) 
     this.state = {
-      id: sampleData[0].id, 
+      id: null,
+      breadcrumbs: [], 
       name: sampleData[0].name,
       sku: sampleData[0].sku,
       stars: sampleData[0].stars,
@@ -31,7 +32,7 @@ class App extends React.Component {
       lastDisplay: null,
       displayPhotos: [],
       selectedIndex: null,
-      displayPhoto: sampleData[0].pictures[0],
+      displayPhoto: [],
       backgroundPosition: '0% 0%',
       direction: '', 
     }
@@ -40,10 +41,37 @@ class App extends React.Component {
     this.downButton = this.downButton.bind(this);
     this.photoClick = this.photoClick.bind(this);
     this.handleMouseMove = this.handleMouseMove.bind(this);
+    this.getItem = this.getItem.bind(this);
   }
 
   componentDidMount() {
     this.fillCarousel();
+    this.getItem(1)
+  }
+
+  getItem (id) {
+    axios
+      .get(`/api/ouiqln/items/${id}`)
+      .then(({data}) => {
+        console.log (data)
+        this.setState ({
+          id: data.id,
+          breadcrumbs: data.breadcrumbs, 
+          name: data.name,
+          sku: data.sku,
+          stars: data.stars,
+          reviews: data.reviews,
+          price: data.price,
+          colors: data.colors,
+          colorNames: data.colorNames,
+          sizes: data.sizes, 
+          details: data.details, 
+          material: data.material, 
+          care: data.care, 
+          photos: data.pictures,
+        })
+      })
+      .catch (error => console.log('error', error))
   }
 
   fillCarousel() {
