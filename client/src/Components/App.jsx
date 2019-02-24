@@ -9,6 +9,7 @@ import BreadCrumb from './BreadCrumb.jsx';
 import PhotoCarousel from './PhotoCarousel.jsx';
 import MainPhoto from './MainPhoto.jsx'
 import DescriptionContainer from './DescriptionContainer.jsx'
+import styles from '../../dist/styles/app.css'
 
 class App extends React.Component {
   constructor (props){
@@ -150,28 +151,28 @@ class App extends React.Component {
         <br/>
         <br/>
 
-        <div className="AppContainer">
+        <div className={styles.appContainer}>
 
-          <div className="photo-icon-container">
-            <div className="PhotoCarousel" className="CarouselContainer">
-              <span id="chevron">
+          <div className={styles.photoIconContainer}>
+            <div className="photoCarousel" className="carouselContainer">
+              <span className={styles.chevron}>
                 <i className="fas fa-chevron-up" onClick={()=>this.upButton()}></i>
               </span>
-                <CSSTransition classNames={this.state.direction} timeout={1000} timeout={1000}>
+                {/* <CSSTransition classNames={this.state.direction} timeout={1000} timeout={1000}> */}
                   <div className="photoSlider">
                     {this.state.displayPhotos.map((photo, i) => {
                       return (
                         <PhotoCarousel photo={photo} index={i} key={i} isSelected={this.state.selectedIndex === i} photoClick={this.photoClick}/>
                       )})}
                   </div>
-                </CSSTransition>
-              <span id="chevron">
+                {/* </CSSTransition> */}
+              <span className={styles.chevron}>
                 <i className="fas fa-chevron-down" onClick={()=>this.downButton()}></i>
               </span>
             </div>
           </div>
         
-          <div id="root">
+          <div className={styles.root}>
             <MainPhoto displayPhoto={this.state.displayPhoto} handleMouseMove={this.handleMouseMove} 
             backgroundPosition={this.state.backgroundPosition}/>
           </div> 

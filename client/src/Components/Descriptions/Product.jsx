@@ -1,6 +1,7 @@
 import React from 'react';
 import Details from './Details.jsx';
-import Materials from './Materials.jsx'
+import Materials from './Materials.jsx';
+import styles from '../../../dist/styles/product.css';
 
 class Product extends React.Component {
   constructor(props) {
@@ -28,18 +29,18 @@ class Product extends React.Component {
   }
 
   render (){
-    const detailSelect = this.state.detailsToggle ? "detail-title-select" : "detail-title"
+    const detailSelect = this.state.detailsToggle ? styles.detailTitleSelect : styles.detailTitle
     // const detailClass = `tower${props.index} ${selected} carouselPic`
-    const materialSelect = this.state.materialToggle ? "material-title-select" : "material-title"
+    const materialSelect = this.state.materialToggle ? styles.materialTitleSelect : styles.materialTitle
     // const materialClass = `tower${props.index} ${selected} carouselPic`
     return (
       <div>
-        <div className="product-detail-container">
+        <div className={styles.productDetailContainer}>
           <div className={detailSelect} onClick={()=> this.clickDetail()}>PRODUCT DETAIL</div>
           <div className={materialSelect} onClick={()=> this.clickMaterial()}>MATERIALS & CARE</div>
         </div>
         <hr/>
-        <div className="product-description">
+        <div className={styles.productDescription}>
           {this.state.detailsToggle 
           ? <Details details={this.props.details} detailsToggle={this.state.detailsToggle}/> 
           : <Materials material={this.props.material} care={this.props.care} materialToggle={this.state.materialToggle}/>

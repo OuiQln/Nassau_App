@@ -1,0 +1,11 @@
+.selectedColor {
+  outline: solid black;
+  outline-width: thin;
+}
+
+.colorRectangle {
+  height: 20px;
+  width: 40px;
+  margin: 3px;
+  border: solid white;
+}

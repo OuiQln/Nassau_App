@@ -1,0 +1,28 @@
+.appContainer {
+  display: flex; 
+}
+
+.photoIconContainer{
+  display: flex;
+  width: 120px;
+  justify-content: center;
+  margin-left: 2em;
+}
+
+.chevron {
+  font-size: 30px;
+  color: lightgray;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.chevron:hover {
+  color: darkgray; 
+  cursor: pointer;
+}
+
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

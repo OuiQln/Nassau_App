@@ -1,10 +1,11 @@
 import React from 'react'
+import styles from '../../dist/styles/mainPhoto.css';
 
 const MainPhoto = (props) => {
     return (
-      <div id="mainPhotoContainer">
+      <div className={styles.mainPhotoContainer}>
         {/* <figure onMouseMove={props.handleMouseMove} > */}
-          <img className="photoCarousel" id="mainPhoto"  src={props.displayPhoto}/>
+          <img className={styles.mainPhoto}  src={props.displayPhoto}/>
         {/* </figure> */}
       </div>
     )

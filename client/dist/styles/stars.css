@@ -1,0 +1,33 @@
+.stars {
+	margin-top:15px;
+	display: flex;
+	flex-direction: row;
+	font-size: 25px;
+	color: lightgray;
+}
+
+.reviewFontNone {
+  color: black;
+  font-weight: 100;
+  font-size: 17px;
+  text-decoration: underline;
+  margin-left: 10px;
+}
+  
+.reviewFont {
+	color: black;
+	font-weight: 600;
+	font-size: 17px;
+	border-bottom: 3px solid silver;
+	margin-left: 10px;
+}
+  
+.emptyStar {
+	font-size: 25px;
+	color: lightgray;
+}
+  
+.filledStar {
+	font-size: 25px;
+	color: red;
+}

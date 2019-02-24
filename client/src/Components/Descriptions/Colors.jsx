@@ -1,5 +1,6 @@
 import React from 'react';
 import ColorBox from './ColorBox.jsx'
+import styles from '../../../dist/styles/colors.css'
 
 class Colors extends React.Component {
   constructor (props) {
@@ -15,14 +16,13 @@ class Colors extends React.Component {
     this.setState({
       colorIndex: index,
     })
-    console.log (this.state)
   }
 
   render () {
     return (
       <div>
-        <span className="colorName">COLOR:</span><span className="colorTag">{this.state.colorNames[this.state.colorIndex]}</span>
-          <div className="Colors">
+        <span className={styles.colorName}>COLOR:</span><span className={styles.colorTag}>{this.state.colorNames[this.state.colorIndex]}</span>
+          <div className={styles.colors}>
             {this.props.colors.map((color, i) => (
               <ColorBox color={color} index={i} key={i} colorClick={this.colorClick}
               isSelected={this.state.colorIndex === i}/>

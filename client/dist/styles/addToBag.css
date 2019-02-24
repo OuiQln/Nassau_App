@@ -1,0 +1,11 @@
+.addToBag {
+  margin-top: .5em; 
+  background-color: #ff2221;
+  color: white;
+  font-weight: bold; 
+  font-size: 24px; 
+  height: 45px;
+  text-align: center;
+  padding-top: .75em;
+  cursor: pointer;
+}

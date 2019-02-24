@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
+import styles from '../../../dist/styles/sizes.css';
+
 
 const Sizes = props => {
   return (
     <div>
-      <li className="dropdown-list-item" 
+      <li className={styles.dropdownListItem} 
       onClick={() => props.selectSize(props.size)}>{props.size}</li>
     </div>
   )

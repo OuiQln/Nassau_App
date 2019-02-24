@@ -1,0 +1,15 @@
+.findInStore {
+  margin-top: .5em; 
+  font-weight: bold;
+  font-size: 24px;
+  height: 45px;
+  text-align: center;
+  padding-top: .75em; 
+  border: 3px solid #e0e0e0;
+  border-color: #bebebe!important;
+  cursor: pointer;
+}
+
+.storeSpan {
+  margin: 5px; 
+}

@@ -1,0 +1,11 @@
+.dropdownListItem {
+  width: 100%;
+  font-size: 20px;
+  padding: 8px 10px;
+  line-height: 1.6rem;
+  cursor: default;
+  display: inline-block;
+  white-space: nowrap;
+  font-weight: bold; 
+  text-overflow: ellipsis;
+}

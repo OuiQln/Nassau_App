@@ -1,0 +1,18 @@
+.colorName {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 15px;  
+}
+  
+.colors {
+  display: flex;
+  flex-direction: row;
+  margin-top: .4em
+}
+
+.colorTag {
+  font-weight: bold;
+  color: gray;
+  font-size: 15px;
+  margin-left: .25em; 
+}

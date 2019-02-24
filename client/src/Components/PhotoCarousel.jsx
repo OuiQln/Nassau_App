@@ -1,10 +1,11 @@
 import React from 'react'
 import classnames from 'classnames';
+import styles from '../../dist/styles/photoCarousel.css';
 // import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 const PhotoCarousel = (props) => {
-    const selected = props.isSelected ? "indyPhotoSelected" : "indyPhoto"
-    const classes = `tower${props.index} ${selected} carouselPic`
+    const selected = props.isSelected ? styles.indyPhotoSelected : styles.indyPhoto
+    const classes = `tower${props.index} ${selected} ${styles.carouselPic}`
     return (
       <div >
         <span>

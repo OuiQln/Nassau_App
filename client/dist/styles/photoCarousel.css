@@ -1,0 +1,17 @@
+.indyPhotoSelected {
+  border: solid black;
+  border-width: thin;
+}
+
+.carouselPic {
+  height: 90px;
+  padding: 6px;  
+} 
+
+.carouselPic:hover {
+  cursor: pointer;
+  border: solid black;
+  border-width: thin;
+}
+
+

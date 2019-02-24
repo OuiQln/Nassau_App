@@ -1,8 +1,9 @@
 import React from 'react';
+import styles from '../../../dist/styles/addToBag.css'
 
 const AddToBag = props => {
   return (
-    <div className="add-to-bag" id="add-to-bag">
+    <div className={styles.addToBag}>
       ADD TO BAG
     </div>
   )

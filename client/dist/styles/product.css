@@ -1,0 +1,40 @@
+.productDetailContainer{
+  margin-top: .5em; 
+  display: flex; 
+  flex-direction: row; 
+}
+
+.productDescription {
+  font-size: 18px; 
+  font-weight: 600; 
+}
+
+.detailTitle {
+  font-weight: bold;
+  font-size: 20px; 
+  flex: 1; 
+  cursor: pointer;
+}
+
+.detailTitleSelect {
+  font-weight: bold;
+  font-size: 20px; 
+  flex: 1; 
+  cursor: pointer;
+  text-decoration-line: underline;
+}
+
+.materialTitle {
+  font-weight: bold; 
+  font-size: 20px;
+  flex: 1;
+  cursor: pointer; 
+}
+
+.materialTitleSelect {
+  font-weight: bold; 
+  font-size: 20px;
+  flex: 1;
+  cursor: pointer;
+  text-decoration-line: underline; 
+}

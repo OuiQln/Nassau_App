@@ -9,6 +9,7 @@ import FindInStore from './Descriptions/FindInStore.jsx';
 import Product from './Descriptions/Product.jsx'
 import SKU from './Descriptions/SKU.jsx'
 import Price from './Descriptions/Price.jsx'
+import styles from '../../dist/styles/descriptionContainer.css'
 
 const DescriptionContainer = props => {
   return (
@@ -32,7 +33,7 @@ const DescriptionContainer = props => {
       <hr/>
       <div className="ruler">
       <i className="fas fa-ruler"></i>
-      <span className="sizeChart">SIZE CHART</span>
+      <span className={styles.sizeChart}>SIZE CHART</span>
       </div>
       <div>
         <DropDownMenus sizes={props.sizes}/>

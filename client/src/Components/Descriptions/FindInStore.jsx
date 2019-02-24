@@ -1,10 +1,11 @@
 import React from 'react';
+import styles from '../../../dist/styles/findInStore.css'
 
 const FindInStore = props => {
   return (
-    <div className="find-in-store">
+    <div className={styles.findInStore}>
     <i className="fas fa-map-marker-alt"></i>
-    <span className="store-span"></span>
+    <span className={styles.storeSpan}></span>
       FIND IN STORE
     </div>
   )

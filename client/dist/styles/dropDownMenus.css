@@ -1,0 +1,123 @@
+.dropdownHeaderTitle {
+  font-size: 18px; 
+  font-weight: bold; 
+  text-align: left; 
+  color: black; 
+}
+
+.dropdownContainer {
+  margin-top: .5em; 
+  display: flex;
+  flex-direction: row; 
+  align-items: stretch; 
+  width: 100%; 
+}
+
+.sizeContainer {
+  flex: 1; 
+}
+
+.sizeHeader{
+  margin-right: .25em; 
+  padding-left: 5px; 
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 38px;
+  cursor: default;
+  position: relative;
+  background-color: #fff;
+  border: 3px solid #e0e0e0;
+  border-color: #bebebe!important;
+  box-sizing: border-box;
+  cursor: pointer; 
+}
+
+.quantityContainer {
+  flex: 1; 
+}
+
+.quantityHeader{
+  margin-left: .25em; 
+  padding-left: 5px; 
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 38px;
+  cursor: default;   
+  position: relative;
+  background-color: #fff;
+  border: 3px solid #e0e0e0;
+  border-color: #bebebe!important;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.quantityList {
+  position: absolute;
+  border: 2px solid #bebebe;
+  border-top: none;
+  background-color: white;
+  box-shadow: 0 2px 5px -1px rgb(232, 232, 232);
+  padding: 15px 0;
+  max-height: 215px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  cursor: pointer;
+  width: 14%;    
+}
+
+.angleDown:after {
+  content: "";
+  position: absolute;
+  border: solid black;
+  top: 22px;
+  right: 15px;
+  display: inline-block;
+  padding: 4px;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -webkit-transition: -webkit-transform .2s ease-in-out;
+    -ms-transition: -ms-transform .2s ease-in-out;
+    transition: transform .2s ease-in-out;   
+}
+
+.angleUp:after {
+  content: "";
+  position: absolute;
+  border: solid black;
+  top: 24px;
+  right: 15px;
+  display: inline-block;
+  padding: 4px;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -webkit-transition: -webkit-transform .2s ease-in-out;
+    -ms-transition: -ms-transform .2s ease-in-out;
+    transition: transform .2s ease-in-out;
+    transform:rotate(-135deg);
+  -ms-transform:rotate(-135deg);
+  -webkit-transform:rotate(-135deg);
+}
+
+.sizeList {
+  position: absolute;
+  border: 2px solid #bebebe;
+  border-top: none;
+  background-color: white;
+  box-shadow: 0 2px 5px -1px rgb(232, 232, 232);
+  padding: 15px 0;
+  max-height: 215px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  cursor: pointer;
+  width: 14%;    
+}

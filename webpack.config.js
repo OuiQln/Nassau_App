@@ -1,4 +1,5 @@
 var path = require('path');
+const combineLoaders = require('webpack-combine-loaders');
 
 module.exports = {
   entry: path.resolve(__dirname, './client/src/index.jsx'),
@@ -18,7 +19,21 @@ module.exports = {
           },
         },
         {
-          test: /\.(png|svg|jpg|gif)$/,
+          test: /\.css$/,
+          loader: combineLoaders([
+            {
+              loader: 'style-loader'
+            }, {
+              loader: 'css-loader',
+              query: {
+                modules: true,
+                localIdentName: '[name]__[local]___[hash:base64:5]'
+              }
+            }
+          ])
+        },
+        {
+          test: /\.(png|woff|woff2|eot|ttf|svg|jpg|gif)$/,
           use: ['file-loader'],
         },
       ]

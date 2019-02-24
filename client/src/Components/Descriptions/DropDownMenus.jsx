@@ -1,6 +1,7 @@
 import React from 'react';
 import Sizes from './Sizes.jsx';
-import Quantity from './Quantity.jsx'
+import Quantity from './Quantity.jsx';
+import styles from '../../../dist/styles/dropDownMenus.css';
 
 class DropDownMenus extends React.Component {
   constructor(props) {
@@ -96,24 +97,24 @@ closeQuantity(){
 }
   render () {
     return (
-      <div className="dropdown-container">
-        <div className="size-container">
-          <div className="size-header" onClick={() => this.toggleSizeList()}>
-            <div className="dropdown-header-title">{this.state.sizeTitle}</div>
-              {this.state.sizeListOpen ? <div className="angleUp"/> : <div className="angleDown"/>}
+      <div className={styles.dropdownContainer}>
+        <div className={styles.sizeContainer}>
+          <div className={styles.sizeHeader} onClick={() => this.toggleSizeList()}>
+            <div className={styles.dropdownHeaderTitle}>{this.state.sizeTitle}</div>
+              {this.state.sizeListOpen ? <div className={styles.angleUp}/> : <div className={styles.angleDown}/>}
           </div>
-            {this.state.sizeListOpen && <ul className="size-list" onClick={e => e.stopPropagation()}>
+            {this.state.sizeListOpen && <ul className={styles.sizeList} onClick={e => e.stopPropagation()}>
             {this.state.sizes.map((size, i)=> (
               <Sizes size={size} id={i} key={i} selectSize={this.selectSize}/>
             ))}
           </ul>}
         </div>
-        <div className="quantity-container">
-          <div className="quantity-header" onClick={() => this.toggleQuantityList()}>
-            <div className="dropdown-header-title">{this.state.quantityTitle}</div>
-              {this.state.quantityListOpen ? <div className="angleUp"/> : <div className="angleDown"/>}
+        <div className={styles.quantityContainer}>
+          <div className={styles.quantityHeader} onClick={() => this.toggleQuantityList()}>
+            <div className={styles.dropdownHeaderTitle}>{this.state.quantityTitle}</div>
+              {this.state.quantityListOpen ? <div className={styles.angleUp}/> : <div className={styles.angleDown}/>}
           </div>
-            {this.state.quantityListOpen && <ul className="quantity-list" onClick={e => e.stopPropagation()}>
+            {this.state.quantityListOpen && <ul className={styles.quantityList} onClick={e => e.stopPropagation()}>
             {this.state.quantity.map((number, i)=> (
               <Quantity number={number} id={i} key={i} selectQuantity={this.selectQuantity}/>
             ))}
