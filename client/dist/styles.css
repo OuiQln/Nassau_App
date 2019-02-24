@@ -289,11 +289,27 @@ body {
   cursor: pointer;
 }
 
+.detail-title-select {
+  font-weight: bold;
+  font-size: 20px; 
+  flex: 1; 
+  cursor: pointer;
+  text-decoration-line: underline;
+}
+
 .material-title {
   font-weight: bold; 
   font-size: 20px;
   flex: 1;
   cursor: pointer; 
+}
+
+.material-title-select {
+  font-weight: bold; 
+  font-size: 20px;
+  flex: 1;
+  cursor: pointer;
+  text-decoration-line: underline; 
 }
 
 #productName {
@@ -313,7 +329,7 @@ body {
   height: 800px;
 }
 
-#chevron{
+#chevron {
   font-size: 30px;
   color: lightgray;
   font-weight: lighter;
@@ -326,7 +342,7 @@ body {
   size: 100px;
 }
 
-.fa-chevron-down{
+.fa-chevron-down {
   text-align: center;
   width: 100px;
   size: 100px;
@@ -337,7 +353,7 @@ body {
   cursor: pointer;
 }
 
-.carouselPic{
+.carouselPic {
   height: 90px;
   padding: 6px;  
 } 
@@ -369,6 +385,11 @@ body {
 
 .quantity-container {
   flex: 1; 
+}
+
+.product-description {
+  font-size: 18px; 
+  font-weight: 600; 
 }
 
 /* 

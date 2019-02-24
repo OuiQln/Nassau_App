@@ -44,7 +44,7 @@ const DescriptionContainer = props => {
         <FindInStore/>
       </div>
       <div>
-        <Product details={props.details} material={props.material}/>
+        <Product details={props.details} material={props.material} care={props.care}/>
       </div>
     </div>
     )

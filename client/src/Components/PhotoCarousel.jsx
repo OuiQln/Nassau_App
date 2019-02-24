@@ -6,7 +6,7 @@ const PhotoCarousel = (props) => {
     const selected = props.isSelected ? "indyPhotoSelected" : "indyPhoto"
     const classes = `tower${props.index} ${selected} carouselPic`
     return (
-      <div>
+      <div >
         <span>
           <img className={classes} src={props.photo} 
             onClick={()=>props.photoClick(props.index)}/>
@@ -15,4 +15,6 @@ const PhotoCarousel = (props) => {
     )
   }
 export default PhotoCarousel;
+
+// style = {{transition: 'transform 800ms ease 0s'}} also translate
 

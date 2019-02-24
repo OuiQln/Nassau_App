@@ -183,7 +183,7 @@ class App extends React.Component {
             price={this.state.price}
             colors={this.state.colors} colorNames={this.state.colorNames}
             sizes={this.state.sizes}
-            details={this.state.details} material={this.state.material}/>
+            details={this.state.details} material={this.state.material} care={this.state.care}/>
           </div>
 
         </div>

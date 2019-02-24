@@ -50,8 +50,8 @@ componentDidUpdate(){
 }
 
 componentWillUnmount(){
-  window.removeEventListener('click', this.sizeClose);
-  window.removeEventListener('click', this.quantityClose);
+  // window.removeEventListener('click', this.sizeClose);
+  // window.removeEventListener('click', this.quantityClose);
 }
 
 selectSize(size, id){
