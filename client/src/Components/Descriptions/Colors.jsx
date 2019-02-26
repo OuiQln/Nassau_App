@@ -13,6 +13,7 @@ class Colors extends React.Component {
   }
 
   colorClick(index) {
+    this.props.colorProductClick(index)
     this.setState({
       colorIndex: index,
     })

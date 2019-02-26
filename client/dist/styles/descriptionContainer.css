@@ -5,3 +5,7 @@
   margin-left: .5em;
   text-decoration-color: gray; 
 }
+
+.sizeChart:hover {
+  cursor: pointer;
+}

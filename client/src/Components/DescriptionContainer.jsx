@@ -1,5 +1,6 @@
 import React from 'react'
 
+import classnames from 'classnames';
 import ProductName from './Descriptions/ProductName.jsx';
 import Stars from './Descriptions/Stars.jsx';
 import Colors from './Descriptions/Colors.jsx';
@@ -28,12 +29,12 @@ const DescriptionContainer = props => {
       </div>
       <hr/>
       <div>
-        <Colors colors={props.colors} colorNames={props.colorNames} />
+        <Colors colors={props.colors} colorNames={props.colorNames} colorProductClick={props.colorProductClick}/>
       </div>
       <hr/>
       <div className="ruler">
       <i className="fas fa-ruler"></i>
-      <span className={styles.sizeChart}>SIZE CHART</span>
+      <span className={classnames(styles.sizeChart)} onClick={()=> props.toggleSizeModal()}>SIZE CHART</span>
       </div>
       <div>
         <DropDownMenus sizes={props.sizes}/>
@@ -42,7 +43,7 @@ const DescriptionContainer = props => {
         <AddToBag/>
       </div>
       <div>
-        <FindInStore/>
+        <FindInStore toggleStore={props.toggleStore} findStore={props.findStore}/>
       </div>
       <div>
         <Product details={props.details} material={props.material} care={props.care}/>

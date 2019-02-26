@@ -8,7 +8,8 @@ import sampleData from '../sampleData.js';
 import BreadCrumb from './BreadCrumb.jsx';
 import PhotoCarousel from './PhotoCarousel.jsx';
 import MainPhoto from './MainPhoto.jsx'
-import DescriptionContainer from './DescriptionContainer.jsx'
+import DescriptionContainer from './DescriptionContainer.jsx';
+import SizeModal from './SizeModal.jsx';
 import styles from '../../dist/styles/app.css'
 
 class App extends React.Component {
@@ -35,7 +36,9 @@ class App extends React.Component {
       selectedIndex: null,
       displayPhoto: [],
       backgroundPosition: '0% 0%',
-      direction: '', 
+      direction: '',
+      sizeModal: false,
+      findStore: false,
     }
     this.fillCarousel = this.fillCarousel.bind(this);
     this.upButton = this.upButton.bind(this);
@@ -43,18 +46,22 @@ class App extends React.Component {
     this.photoClick = this.photoClick.bind(this);
     this.handleMouseMove = this.handleMouseMove.bind(this);
     this.getItem = this.getItem.bind(this);
+    this.openSizeModal = this.openSizeModal.bind(this)
+    this.toggleSizeModal = this.toggleSizeModal.bind(this);
+    this.toggleStore = this.toggleStore.bind(this);
+    this.colorProductClick = this.colorProductClick.bind(this);
   }
 
   componentDidMount() {
-    this.fillCarousel();
-    this.getItem(1)
+    let getIndex = Math.floor(Math.random() * 8)
+    console.log (getIndex)
+    this.getItem(getIndex)
   }
 
   getItem (id) {
     axios
       .get(`/api/ouiqln/items/${id}`)
       .then(({data}) => {
-        console.log (data)
         this.setState ({
           id: data.id,
           breadcrumbs: data.breadcrumbs, 
@@ -70,7 +77,11 @@ class App extends React.Component {
           material: data.material, 
           care: data.care, 
           photos: data.pictures,
+          displayPhoto: data.pictures[0],
         })
+      })
+      .then (response => {
+        this.fillCarousel()
       })
       .catch (error => console.log('error', error))
   }
@@ -118,6 +129,13 @@ class App extends React.Component {
     })
   }
 
+  colorProductClick (index) {
+    let color = this.state.photos.length-1-index
+    this.setState ({
+      displayPhoto: this.state.photos[color]
+    })
+  }
+
   downButton() {
     let display = []
     if (this.state.photos.length > this.state.lastDisplay) {
@@ -140,18 +158,35 @@ class App extends React.Component {
     this.setState({ backgroundPosition: `${x}% ${y}%` })
   }
 
+  toggleSizeModal () {
+    this.setState(prevState => ({
+      sizeModal: !prevState.sizeModal
+    }))
+  }
+
+  toggleStore () {
+    this.setState(prevState => ({
+      findStore: !prevState.findStore
+    }))
+  }
+
+  openSizeModal () {
+    let modal = document.getElementsByClassName(styles.sizeModal)
+    modal.style.display = 'block'
+  }
+
   render () {
     return (
       <div>
 
         <div>
-          <BreadCrumb/> 
+          <BreadCrumb breadcrumbs={this.state.breadcrumbs}/> 
         </div>
 
         <br/>
         <br/>
 
-        <div className={styles.appContainer}>
+        <div className={classNames(styles.appContainer)}>
 
           <div className={styles.photoIconContainer}>
             <div className="photoCarousel" className="carouselContainer">
@@ -179,15 +214,21 @@ class App extends React.Component {
 
           <div>
             <DescriptionContainer productName={this.state.name}
+            toggleSizeModal={this.toggleSizeModal}
+            findStore={this.state.findStore}
+            toggleStore={this.toggleStore}
             sku={this.state.sku} 
             stars={this.state.stars} reviews={this.state.reviews}
             price={this.state.price}
+            colorProductClick={this.colorProductClick}
+            photo={this.state.photo} displayPhotos={this.state.displayPhotos}
             colors={this.state.colors} colorNames={this.state.colorNames}
             sizes={this.state.sizes}
             details={this.state.details} material={this.state.material} care={this.state.care}/>
           </div>
 
         </div>
+        {this.state.sizeModal ? <SizeModal toggleSizeModal={this.toggleSizeModal}/> : null}
 
       </div>
     )

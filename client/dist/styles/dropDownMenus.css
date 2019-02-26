@@ -73,6 +73,10 @@
   width: 14%;    
 }
 
+.quantityList:hover {
+  cursor: pointer;  
+}
+
 .angleDown:after {
   content: "";
   position: absolute;
@@ -120,4 +124,8 @@
   -webkit-overflow-scrolling: touch;
   cursor: pointer;
   width: 14%;    
+}
+
+.sizeList:hover {
+  cursor: pointer; 
 }
